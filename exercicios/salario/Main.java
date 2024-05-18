@@ -2,7 +2,7 @@ package exercicios.salario;
 
 public class Main {
     public static void main(String[] args) {
-        Funcionario func1 = new Funcionario("Jore", 20.0, 160);
+        Funcionario func1 = new Funcionario("Jorge", 20.0, 160);
         Lider lider1 = new Lider("Matheus", 25.0, 170);
         Gerente gerente1 = new Gerente("Antonio", 30.0, 180);
 
