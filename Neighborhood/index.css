@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+:root{
+    --verde-color: #426B1F;
+    --verdeclaro-color: rgba(66, 107, 31, 0.72);
+}
+
+body{
+    margin: 10px 30px;
+}
+
+*{
+    font-family: "Newsreader", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--verde-color) solid 0.1rem;
+}
+
+nav .sitename{
+    color: var(--verde-color);
+}
+
+.login-button{
+    justify-content: center;
+    background-color: var(--verde-color);
+    padding: 10px 15px 10px 15px;
+    border-radius: 8px;
+    color: white;
+}
+
+.localizacao{
+    display: block;
+    justify-items: center;
+
+}
+.local{
+    background-color: #D9D9D9;
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+}
+
+.real-local{
+    display: block;
+    padding: 10px 0px 0px 0px;
+    justify-items: auto;
+    margin-bottom: 20px;
+}
+.real-local h2 {
+    font-size: 2.5rem;
+}
+.real-local h5{
+    font-size: 1rem;
+    padding: 8px 10px 8px 10px;
+    border-radius: 8px;
+    display: block;
+    border: var(--verde-color) solid 1px;
+    margin-right: auto;
+}
+
+main{
+    display: inline-flex;
+    align-items: flex-start;
+}
+section{
+    display: flex;
+    gap: 20px;
+}
+article{
+    flex:3;
+    padding: 20px;
+
+}
+main h1{
+    margin-bottom: 1rem;
+}
+.hotel1, .hotel2{
+    box-shadow: 0px 0px 10px 3px #808080;
+    border: #808080 solid 1px;
+    border-radius: 10px 10px 10px 10px;
+    height: 30rem;
+    width: 27rem;
+}
+section .imgh1{
+    width: 27rem;
+    height: 20rem;
+    border-radius: 10px 10px 0px 0px;
+    flex: 1;
+    background-image: url('dark.png');
+    background-position: center;
+    background-size: cover;
+}
+section .dinheiro1{
+    flex: 1;
+    display: flex;
+    color: var(--verde-color);
+    padding-left: 10px;
+}
+section .rua1{
+    flex:1;
+    display: flex;
+    padding-top: 10px;
+    color: #808080;
+    padding-left: 10px;
+}
+section .texto{
+    flex: 1;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+section .imgh2{
+    width: 27rem;
+    height: 20rem;
+    border-radius: 10px 10px 0px 0px;
+    background-image: url('dark.png');
+    background-size: cover;
+}
+section .dinheiro2{
+    flex: 1;
+    display: flex;
+    color: var(--verde-color);
+    padding-left: 10px;
+}
+section .rua2{
+    flex:1;
+    display: flex;
+    padding-top: 10px;
+    color: #808080;
+    padding-left: 10px;
+}
+
+aside.filtros{
+    position: absolute;
+    top: 21rem;
+    right: 0;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-left: 2px solid #ccc;
+    max-width: 250px;
+    height: 100%;
+}
+/* menores q 768 */
+@media (max-width: 957px){
+    main{
+        flex-direction: column;
+    }
+    aside.filtros{
+        margin-left: 0;
+        max-width: none;
+    }
+    article{
+        width: 100%;
+    }
+    section{
+        flex-direction: column;
+    }
+    .hotel1, .hotel2{
+        width: 91%;
+    }
+}
+
+/* menores q 480 */
+/* @media (max-width: 480px){
+    aside.filtros{
+        padding: 10px;
+    }
+} */

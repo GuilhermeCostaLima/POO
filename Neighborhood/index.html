@@ -1,15 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neighborhood Hotels</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-    <body>
-        <header>
-            <nav>
-                
-            </nav>
-        </header>
-    </body>
+
+<body>
+    <header>
+        <nav>
+            <a href="/Neighborhood/index.html" style="text-decoration: none;">
+                <h1 class="sitename">Neighborhood Hotels</h1>
+            </a>
+            <h5 class="localizacao">Localização
+                <div class="local"> Joinville e Região</div>
+                </h2>
+                <a href="#" style="text-decoration: none;">
+                    <div class="login-button">
+                        Fazer login
+                    </div>
+                </a>
+        </nav>
+    </header>
+    <div class="real-local">
+        <h2>Localização</h1>
+            <h5>Pirabeiraba / Distrito Industrial</h5>
+    </div>
+
+    <h1>Hotels</h1>
+    <hr>
+
+    <main>
+        <article>
+            <section>
+                <div class="hotel1">
+                    <div class="imgh1"></div>
+                    <div class="texto">Refúgio Morro da Tromba</div>
+                    <div class="dinheiro1">R$50,99 / Noite</div>
+                    <div class="rua1">Rua Lauro Tobler, CEP 89239-303</div>
+                </div>
+
+                <div class="hotel2">
+                    <div class="imgh2"></div>
+                    <div class="texto">Casa Joinville</div>
+                    <div class="dinheiro2">R$129,00/ Noite</div>
+                    <div class="rua2">Rua Edilson Santos Almeida, 20, CEP 89239-250</div>
+                </div>
+            </section>
+        </article>
+
+        <aside class="filtros">
+            <h2>Filtros</h2>
+            <form>
+                <label for="quantidade"> Pessoas:</label>
+                <select id="quantidade" name="quantidade">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <h3>Categorias</h3>
+                <label>
+                    <input type="checkbox" name="categoria" value="eletronicos"> Eletrônicos
+                </label><br>
+                <label>
+                    <input type="checkbox" name="categoria" value="roupas"> Roupas
+                </label><br>
+                <button type="submit">Aplicar Filtros</button>
+            </form>
+        </aside>
+    </main>
+</body>
+
 </html>
