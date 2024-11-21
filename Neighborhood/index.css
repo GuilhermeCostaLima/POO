@@ -1,62 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 
-:root{
+:root {
     --verde-color: #426B1F;
     --verdeclaro-color: rgba(66, 107, 31, 0.72);
 }
 
 body{
-    margin: 10px 30px;
+    margin: 10px 300px;
+    background-color: #fcfcfc;
 }
 
-*{
+* {
     font-family: "Newsreader", serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: var(--verde-color) solid 0.1rem;
 }
 
-nav .sitename{
+nav .sitename {
     color: var(--verde-color);
 }
 
-.login-button{
+.login-button {
     justify-content: center;
     background-color: var(--verde-color);
     padding: 10px 15px 10px 15px;
     border-radius: 8px;
-    color: white;
+    color: #ffffff;
 }
 
-.localizacao{
+.localizacao {
     display: block;
     justify-items: center;
 
 }
-.local{
+
+.local {
     background-color: #D9D9D9;
     padding: 5px 10px 5px 10px;
     border-radius: 8px;
 }
 
-.real-local{
+
+.real-local {
     display: block;
     padding: 10px 0px 0px 0px;
     justify-items: auto;
     margin-bottom: 20px;
 }
+
 .real-local h2 {
     font-size: 2.5rem;
 }
-.real-local h5{
+
+.real-local h5 {
     font-size: 1rem;
     padding: 8px 10px 8px 10px;
     border-radius: 8px;
@@ -65,115 +69,131 @@ nav .sitename{
     margin-right: auto;
 }
 
-main{
-    display: inline-flex;
-    align-items: flex-start;
+.semideia{
+    font-size:2.5rem;
 }
-section{
+main {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
+    height: auto;
+    margin-top:20px;
 }
-article{
-    flex:3;
-    padding: 20px;
 
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width:100%;
 }
-main h1{
+
+article {
+    flex: 3;
+    padding: 20px;
+}
+
+main h1 {
     margin-bottom: 1rem;
 }
-.hotel1, .hotel2{
+
+.hotel1,
+.hotel2 {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
     box-shadow: 0px 0px 10px 3px #808080;
     border: #808080 solid 1px;
-    border-radius: 10px 10px 10px 10px;
-    height: 30rem;
-    width: 27rem;
+    border-radius: 10px;
+    max-width: 750px;
+    margin: 0px auto;
+    margin-right: 53rem;
+    height: auto;
+    width: 100%;
 }
-section .imgh1{
-    width: 27rem;
-    height: 20rem;
-    border-radius: 10px 10px 0px 0px;
-    flex: 1;
+
+.imgh1 {
+    width: 40%;
+    height: 200px;
+    border-radius: 10px 0px 0px 10px;
     background-image: url('dark.png');
     background-position: center;
     background-size: cover;
 }
-section .dinheiro1{
-    flex: 1;
-    display: flex;
-    color: var(--verde-color);
-    padding-left: 10px;
-}
-section .rua1{
-    flex:1;
-    display: flex;
-    padding-top: 10px;
-    color: #808080;
-    padding-left: 10px;
-}
-section .texto{
-    flex: 1;
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
+
+.hotel1 .conteudo{
+    display:flex;
+    flex-direction:column;
     justify-content: center;
-    padding: 20px;
-    text-align: center;
+    width:45%;
 }
-
-section .imgh2{
-    width: 27rem;
-    height: 20rem;
-    border-radius: 10px 10px 0px 0px;
-    background-image: url('dark.png');
-    background-size: cover;
-}
-section .dinheiro2{
-    flex: 1;
+.hotel1 .dinheiro1 {
     display: flex;
     color: var(--verde-color);
-    padding-left: 10px;
+    flex-direction: column;
+    justify-content:center;
+    width:60%;
 }
-section .rua2{
-    flex:1;
+
+.hotel1 .descricao {
+    font-size:1rem;
+    margin-bottom: 10px;
+}
+
+.texto {
+    font-size: 1.2rem;
+    padding: 20px;
+    font-weight:bold;
+}
+
+.imgh2 {
+    width: 40%;
+        height: 200px;
+        border-radius: 10px 0px 0px 10px;
+        background-image: url('dark.png');
+        background-position: center;
+        background-size: cover;
+}
+.hotel2 .conteudo{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    width:45%;
+}
+.hotel2 .dinheiro2 {
     display: flex;
-    padding-top: 10px;
-    color: #808080;
-    padding-left: 10px;
+    color: var(--verde-color);
+    flex-direction: column;
+    justify-content:center;
+    width:60%;
 }
 
-aside.filtros{
+.hotel2 .descricao {
+    font-size:1rem;
+    margin-bottom: 10px;
+}
+
+aside.filtros {
     position: absolute;
-    top: 21rem;
-    right: 0;
-    padding: 15px;
-    background-color: #f4f4f4;
-    border-left: 2px solid #ccc;
-    max-width: 250px;
-    height: 100%;
+    top: 22rem;
+    right: 290px;
+    padding: 5px;
+    border-left: 1px solid #ccc;
+    max-width: auto;
+    height: 59vh;
+    background-color: #fcfcfc;
 }
-/* menores q 768 */
-@media (max-width: 957px){
-    main{
-        flex-direction: column;
-    }
-    aside.filtros{
-        margin-left: 0;
-        max-width: none;
-    }
-    article{
-        width: 100%;
-    }
-    section{
-        flex-direction: column;
-    }
-    .hotel1, .hotel2{
-        width: 91%;
-    }
+.filtro-quartos select{
+    border-radius: 10px;
+    padding:5px;
 }
 
-/* menores q 480 */
-/* @media (max-width: 480px){
-    aside.filtros{
-        padding: 10px;
-    }
-} */
+
+/* Telefones em paisagem */
+@media (min-width: 576px) { }
+/* Tablets */
+@media (min-width: 768px) {  }
+/* Telas pequenas de desktop */
+@media (min-width: 992px) {  }
+/* Telas grandes de desktop */
+@media (min-width: 1200px) {  }

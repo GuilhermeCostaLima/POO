@@ -1,83 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/index.css">
     <title>Neighborhood Hotels</title>
-    <link rel="stylesheet" href="index.css">
-</head>
+    <style>
 
+
+    </style>
+</head>
 <body>
     <header>
         <nav>
-            <a href="/Neighborhood/index.html" style="text-decoration: none;">
+            <a href="index.html" style="text-decoration: none">
                 <h1 class="sitename">Neighborhood Hotels</h1>
             </a>
             <h5 class="localizacao">Localização
-                <div class="local"> Joinville e Região</div>
-                </h2>
-                <a href="#" style="text-decoration: none;">
-                    <div class="login-button">
-                        Fazer login
-                    </div>
-                </a>
+                <div class="local">Joinville e Região</div>
+            </h5>
+
+            <div class="login-button">
+                <div sec:authorize="!isAuthenticated()">
+                    <a href="/templates/login" style="text-decoration: none; color: white;">Login</a> | <a href="/templates/register" style="text-decoration: none; color: white;">Registrar</a>
+                </div>
+            </div>
         </nav>
+        <!--<div sec:authorize="isAuthenticated()">
+            Olá, <span th:text="${username}"></span>! |
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sair"/>
+            </form>
+        </div>-->
+
     </header>
+
     <div class="real-local">
-        <h2>Localização</h1>
+        <h2>Localização</h2>
             <h5>Pirabeiraba / Distrito Industrial</h5>
     </div>
 
-    <h1>Hotels</h1>
+    <h1 class="semideia">Bem-vindo ao Neighborhood Hotels!</h1>
     <hr>
 
     <main>
         <article>
             <section>
-                <div class="hotel1">
+                <div class="hotel1" tipo="casa" estrelas="4" quartos="1">
                     <div class="imgh1"></div>
-                    <div class="texto">Refúgio Morro da Tromba</div>
-                    <div class="dinheiro1">R$50,99 / Noite</div>
-                    <div class="rua1">Rua Lauro Tobler, CEP 89239-303</div>
+                    <div class="conteudo">
+                        <div class="texto">Refúgio Morro da Tromba</div>
+                        <div class="descricao">Situado em Joinville, a 24 km do Morro da Boa Vista, o Refúgio Morro da Tromba é uma acomodação com vista do jardim.
+                            <br>
+                            Rua Lauro Tobler, CEP 89239-303</div>
+                        <div class="dinheiro1">R$50,99 / Noite</div>
+                    </div>
                 </div>
 
                 <div class="hotel2">
                     <div class="imgh2"></div>
-                    <div class="texto">Casa Joinville</div>
-                    <div class="dinheiro2">R$129,00/ Noite</div>
-                    <div class="rua2">Rua Edilson Santos Almeida, 20, CEP 89239-250</div>
+                        <div class="conteudo">
+                        <div class="texto">Casa Joinville</div>
+                        <div class="descricao">Rua Edilson Santos Almeida, 20, CEP 89239-250</div>
+                        <div class="dinheiro2">R$129,00/ Noite</div>
+                    </div>
                 </div>
             </section>
         </article>
 
         <aside class="filtros">
-            <h2>Filtros</h2>
-            <form>
-                <label for="quantidade"> Pessoas:</label>
-                <select id="quantidade" name="quantidade">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
+            <h3>Filtros</h3>
+
+            <div class="filtro-tipo">
+                <label><input type="checkbox" name="tipo" value="apartamento">Apartamento</label><br>
+                <label><input type="checkbox" name="tipo" value="hotel">Hotel</label><br>
+                <label><input type="checkbox" name="tipo" value="casa">Casa de Hóspedes</label>
+            </div>
+            <hr>
+            <div class="filtro-estrelas">
+                <label><input type="radio" name="estrelas" value="5"> 5 Estrelas</label><br>
+                <label><input type="radio" name="estrelas" value="5"> 4 Estrelas</label><br>
+                <label><input type="radio" name="estrelas" value="5"> 3 Estrelas</label><br>
+                <label><input type="radio" name="estrelas" value="5"> 2 Estrelas</label><br>
+                <label><input type="radio" name="estrelas" value="5"> 1 Estrelas</label>
+            </div>
+            <hr>
+            <div class="filtro-quartos">
+                <h4>Quantidade de quartos</h4>
+                <select id="quartos">
+                    <option value="">Selecionar</option>
+                    <option value="1">1 Quarto</option>
+                    <option value="2">2 Quartos</option>
+                    <option value="3">3 Quartos</option>
+                    <option value="4">4 Quartos</option>
+                    <option value="5">5 Quartos</option>
                 </select>
-                <h3>Categorias</h3>
-                <label>
-                    <input type="checkbox" name="categoria" value="eletronicos"> Eletrônicos
-                </label><br>
-                <label>
-                    <input type="checkbox" name="categoria" value="roupas"> Roupas
-                </label><br>
-                <button type="submit">Aplicar Filtros</button>
-            </form>
+            </div>
+            <br>
+            <button onclick="aplicarfiltros()">Aplicar Filtros</button>
         </aside>
     </main>
+    <script src="/js/script.js"></script>
 </body>
-
 </html>
