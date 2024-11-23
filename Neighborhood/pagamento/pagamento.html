@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar</title>
+    <link rel="stylesheet" href="pagamento.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" style="text-decoration: none">
+                <h1 class="sitename">Neighborhood Hotels</h1>
+            </a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <form class="plus">
+            <div class="info">
+                <div class="hotel">
+                    <h2>Refúgio Morro da Tromba</h1>
+                </div>
+                <div class="desc">
+                    <h5>Rua Lauro Tobler, Joinville, CEP 89239-303, Brasil</h4>
+                </div>
+                <hr>
+                <div class="estadia">
+                    <h4>Por favor, selecionar horário de entrada e saída:</h3>
+                    <div class="entrada">
+                        Entrada: 
+                        <input type="datetime-local" name="entrada" id="entrada">
+                    </div>
+                    <br>
+                    <div class="saida">
+                        Saída:  
+                        <input type="datetime-local" name="saida" id="saida">
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <div class="preço">
+                    <h3>R$00,00</h3>
+                </div>
+            </div>
+            
+        </form>
+        <form action="">
+            <div class="row">
+                <div class="column">
+                    <h3 class="title">Endereço de cobrança</h3>
+                    <div class="input-box">
+                        <span>Nome completo:</span>
+                        <input type="text" placeholder="Guilherme da Costa de Lima">
+                    </div>
+                    <div class="input-box">
+                        <span>Email :</span>
+                        <input type="email" placeholder="example@example.com">
+                    </div>
+                    <div class="input-box">
+                        <span>Endereço :</span>
+                        <input type="text" placeholder="Rua - Numero">
+                    </div>
+                    <div class="input-box">
+                        <span>Cidade :</span>
+                        <input type="text" placeholder="Joinville">
+                    </div>
+
+                    <div class="flex">
+                        <div class="input-box">
+                            <span>Estado :</span>
+                            <input type="text" placeholder="Santa Catarina">
+                        </div>
+                        <div class="input-box">
+                            <span>CEP :</span>
+                            <input type="number" placeholder="123 456">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 class="title">Pagamento</h3>
+                    <div class="input-box">
+                        <span>Cartões aceitos :</span>
+                        <img src="cartões.png" alt="">
+                    </div>
+                    <div class="input-box">
+                        <span>Nome no cartão:</span>
+                        <input type="text" placeholder="Guilherme C Lima">
+                    </div>
+                    <div class="input-box">
+                        <span>Número do cartão :</span>
+                        <input type="number" placeholder="1111 2222 3333 4444">
+                    </div>
+                    <div class="input-box">
+                        <span>Mês de validade :</span>
+                        <input type="text" placeholder="agosto">
+                    </div>
+                
+                    <div class="flex">
+                        <div class="input-box">
+                            <span>Ano de validade :</span>
+                            <input type="number" placeholder="2030">
+                        </div>
+                        <div class="input-box">
+                            <span>CVC :</span>
+                            <input type="number" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Confirmar</button>
+            <button type="submit" class="btn2">Cancelar</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
