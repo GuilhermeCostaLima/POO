@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+:root {
+    --verde-color: #426B1F;
+    --verdeclaro-color: rgba(66, 107, 31, 0.72);
+}
+
+body {
+    margin: 10px 300px;
+    background-color: #fcfcfc;
+}
+
+* {
+    font-family: "Newsreader", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--verde-color) solid 0.1rem;
+}
+
+nav .sitename {
+    color: var(--verde-color);
+}
+
+.login-button {
+    justify-content: center;
+    background-color: var(--verde-color);
+    padding: 10px 15px 10px 15px;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+
+
+.title {
+    font-size: 3rem;
+}
+
+.desc-h{
+    display: flex;
+    justify-content: center;
+    font-size: 1.4em;
+
+}
+.container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    min-height: 70vh;
+    padding: 15px;
+    gap: 55px;
+}
+
+.container form {
+    width: 750px;
+    padding: 10px;
+    border-radius: 10px;
+    border: var(--verdeclaro-color) 2px solid; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.container form.produto {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+    border: 2px solid var(--verdeclaro-color);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+
+.container form .info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container form .hotel-img {
+    background-image: url('morro.png');
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    height: 339px;
+    width: 100%;
+}
+
+.container form .hotel-info {
+    padding: 10px;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-info .dinheiro{
+    color: var(--verde-color);
+}
+.hotel-info .rua{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.tag .inline-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.tag .inline-list li {
+    display: flex;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: black;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #f1eded;
+    background: #f4f4f4;
+    box-shadow: 3px 3px var(--verde-color);
+}
+
+.tag .material-symbols-outlined {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.tag2 .inline-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.tag2 .inline-list li {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: black;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #f1eded;
+    background: #f4f4f4;
+    box-shadow: 3px 3px var(--verde-color);
+}
+
+.tag2 .material-symbols-outlined {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.regras li {
+    list-style-type: none;
+}
+
+.btn-res {
+    font-size: 1rem;
+    background-color: var(--verdeclaro-color);
+    border-radius: 5px;
+    border: 0;
+
+}
+
+.btn-res {
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
+    cursor: pointer;
+    color: #f4f4f4;
+}
+
+.btn-res::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.btn-res:hover::before {
+    width: 9em;
+}
+
+
+
