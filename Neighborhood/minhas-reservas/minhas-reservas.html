@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="minhas-reservas.css">
+    <script src="minhas-reservas.js" defer></script>
+    <title>Minhas Reservas</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <a href="index.html" style="text-decoration: none">
+            <h1 class="sitename">Neighborhood Hotels</h1>
+        </a>
+
+        <div class="login-button">
+            <div sec:authorize="!isAuthenticated()">
+                <a href="/templates/login" style="text-decoration: none; color: white;">Meu perfil</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                <h2>Refúgio Morro da Tromba</h2>
+                <p>Data:</p>
+                <hr>
+                <p>Valor</p>
+            </div>
+            <div class="more-info" onclick="toggleInfo(1)">Mais informações</div>
+            <div class="additional-info" id="additionalInfo1">
+                <p>informações adicionais</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h2>Título</h2>
+                <p>Data:</p>
+                <hr>
+                <p>Valor</p>
+            </div>
+            <div class="more-info" onclick="toggleInfo(2)">Mais informações</div>
+            <div class="additional-info" id="additionalInfo2">
+                <p>informações adicionais</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h2>Título</h2>
+                <p>Data:</p>
+                <hr>
+                <p>Valor</p>
+            </div>
+            <div class="more-info" onclick="toggleInfo(3)">Mais informações</div>
+            <div class="additional-info" id="additionalInfo3">
+                <p>informações adicionais</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h2>Título</h2>
+                <p>Data:</p>
+                <hr>
+                <p>Valor</p>
+            </div>
+            <div class="more-info" onclick="toggleInfo(4)">Mais informações</div>
+            <div class="additional-info" id="additionalInfo4">
+                <p>informações adicionais</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
