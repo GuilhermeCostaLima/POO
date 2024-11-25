@@ -1,37 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="profile.css">
-    <meta name="description" content="Profile Settings Using HTML & CSS. Made by learningrobo.com">
+    <link rel="stylesheet" th:href="@{/css/profile.css}">
+    <meta name="description" content="Profile Settings Using HTML & CSS.">
     <meta name="author" content="learningrobo.com">
-    <meta name="keywords" content="form,responsive,learningrobo.com,html & css projects,project,introduction">
+    <meta name="keywords" content="form,responsive,html & css projects,project">
     <link rel="icon" type=image/x-icon href="#">
     <script src="https://kit.fontawesome.com/5d72166fb5.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-
     <title>Perfil</title>
 </head>
-    <body>
-        <header>
-            <nav>
-                <a href="index.html" style="text-decoration: none">
-                    <h1 class="sitename">Neighborhood Hotels</h1>
-                </a>
-            </nav>
-        </header>
 
+<body>
+    <header>
+        <nav>
+            <a th:href="@{/}" style="text-decoration: none">
+                <h1 class="sitename">Neighborhood Hotels</h1>
+            </a>
+        </nav>
+    </header>
 
     <div class="container">
         <div class="box">
             <div class="c1">
-                <p><i class="fa-regular fa-user" style="color: #ffffff;"></i>Perfil</p>
-                <p><i class="fa-regular fa-bell" style="color: #ffffff;"></i>Notificações</p>
-                <p><i class="fa-regular fa-newspaper" style="color: #ffffff;"></i>Minhas Reservas</p>
-                <p><i class="fa-solid fa-gear" style="color: #ffffff;"></i>Geral</p>
+                <p><i class="fa-regular fa-user" style="color: #ffffff;"></i> Perfil</p>
+                <p><i class="fa-regular fa-bell" style="color: #ffffff;"></i> Notificações</p>
+                <p><i class="fa-regular fa-newspaper" style="color: #ffffff;"></i> Minhas Reservas</p>
+                <p><i class="fa-solid fa-gear" style="color: #ffffff;"></i> Geral</p>
+                <p>
+                    <a th:href="@{/relatorio-graficos}" style="text-decoration: none;">
+                        <i class="fa-solid fa-chart-simple" style="color: #ffffff;"></i> Relatórios
+                    </a>
+                </p>
             </div>
             <div class="c2">
                 <div class="s1">
@@ -58,18 +63,6 @@
             </div>
         </div>
     </div>
-   
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-    </body>
 </html>
