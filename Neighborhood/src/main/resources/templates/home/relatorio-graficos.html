@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="relatorio-graficos.css">
+    <title>Relatórios de Gráficos</title>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a th:href="@{/}" style="text-decoration: none">
+                <h1 class="sitename">Neighborhood Hotels</h1>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <div class="grafico-section">
+            <h2>Receita Mensal</h2>
+            <img th:src="@{/relatorio/receita-mensal}" alt="Gráfico de Receita Mensal">
+        </div>
+
+        <div class="grafico-section">
+            <h2>Quartos Mais Reservados</h2>
+            <img th:src="@{/relatorio/quartos-mais-reservados}" alt="Gráfico de Quartos Mais Reservados">
+        </div>
+
+        <div class="grafico-section">
+            <h2>Taxa de Ocupação</h2>
+            <img th:src="@{/relatorio/ocupacao}" alt="Gráfico de Taxa de Ocupação">
+        </div>
+    </main>
+</body>
+
+</html>
