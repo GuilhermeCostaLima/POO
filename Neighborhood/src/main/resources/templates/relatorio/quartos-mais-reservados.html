@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quartos Mais Reservados</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h1>{{ relatorio.titulo }}</h1>
+    <p>{{ relatorio.descricao }}</p>
+
+    <canvas id="quartosMaisReservadosChart" width="400" height="200"></canvas>
+
+    <script>
+        const ctx = document.getElementById('quartosMaisReservadosChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: {{ relatorio.labels | json_encode }},
+        datasets: [{
+            data: {{ relatorio.valores | json_encode }},
+            backgroundColor: [
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)'
+        ],
+            borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)'
+        ],
+            borderWidth: 1
+                }]
+            }
+        });
+    </script>
+</body>
+
+</html>

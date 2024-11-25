@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita Mensal</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h1>{{ relatorio.titulo }}</h1>
+    <p>{{ relatorio.descricao }}</p>
+
+    <canvas id="receitaMensalChart" width="400" height="200"></canvas>
+
+    <script>
+        const ctx = document.getElementById('receitaMensalChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: {{ relatorio.labels | json_encode }},
+        datasets: [{
+            label: '{{ relatorio.legenda }}',
+            data: {{ relatorio.valores | json_encode }},
+            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+                }]
+            },
+        options: {
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                            text: '{{ relatorio.xLabel }}'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                            text: '{{ relatorio.yLabel }}'
+                    },
+                    beginAtZero: true
+                }
+            }
+        }
+        });
+    </script>
+</body>
+
+</html>
