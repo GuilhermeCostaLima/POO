@@ -1,91 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="minhas-reservas.css">
-    <script src="minhas-reservas.js" defer></script>
+    <link th:href="@{/css/minhas-reservas.css}" rel="stylesheet">
+    <script th:src="@{/js/minhas-reservas.js}" defer></script>
     <title>Minhas Reservas</title>
 </head>
 
 <body>
     <nav class="nav">
-        <a href="index.html" style="text-decoration: none">
+        <a th:href="@{/}" style="text-decoration: none">
             <h1 class="sitename">Neighborhood Hotels</h1>
         </a>
 
         <div class="login-button">
-            <div sec:authorize="!isAuthenticated()">
-                <a href="/templates/login" style="text-decoration: none; color: white;">Meu perfil</a>
+            <div sec:authorize="isAuthenticated()">
+                <a th:href="@{/perfil}" style="text-decoration: none; color: white;">Meu perfil</a>
             </div>
         </div>
     </nav>
 
     <div class="card-container">
-        <div class="card">
+        <!-- Iterar sobre as reservas do backend -->
+        <div class="card" th:each="reserva : ${reservas}">
             <div class="card-content">
-                <h2>Refúgio Morro da Tromba</h2>
-                <p>Data:</p>
+                <h2 th:text="${reserva.hotelNome}">Refúgio Morro da Tromba</h2>
+                <p>Data: <span th:text="${reserva.data}">01/01/2024</span></p>
                 <hr>
-                <p>Valor</p>
+                <p>Valor: R$ <span th:text="${reserva.valor}">500,00</span></p>
             </div>
-            <div class="more-info" onclick="toggleInfo(1)">Mais informações</div>
-            <div class="additional-info" id="additionalInfo1">
-                <p>informações adicionais</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-content">
-                <h2>Título</h2>
-                <p>Data:</p>
-                <hr>
-                <p>Valor</p>
-            </div>
-            <div class="more-info" onclick="toggleInfo(2)">Mais informações</div>
-            <div class="additional-info" id="additionalInfo2">
-                <p>informações adicionais</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-content">
-                <h2>Título</h2>
-                <p>Data:</p>
-                <hr>
-                <p>Valor</p>
-            </div>
-            <div class="more-info" onclick="toggleInfo(3)">Mais informações</div>
-            <div class="additional-info" id="additionalInfo3">
-                <p>informações adicionais</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-content">
-                <h2>Título</h2>
-                <p>Data:</p>
-                <hr>
-                <p>Valor</p>
-            </div>
-            <div class="more-info" onclick="toggleInfo(4)">Mais informações</div>
-            <div class="additional-info" id="additionalInfo4">
-                <p>informações adicionais</p>
+            <div class="more-info" th:onclick="'toggleInfo(' + ${reserva.id} + ')'">Mais informações</div>
+            <div class="additional-info" th:id="'additionalInfo' + ${reserva.id}" style="display: none;">
+                <p th:text="${reserva.infoAdicional}">Informações adicionais</p>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
+    
 </body>
 
 </html>
+
+
+
+<!-- se necessario
+
+@Controller
+@RequestMapping("/reservas")
+public class ReservaController {
+
+    @GetMapping
+    public String listarReservas(Model model) {
+        // Simulação de dados
+        List<Reserva> reservas = List.of(
+            new Reserva(1, "Refúgio Morro da Tromba", "2024-01-01", 500.00, "Vista para o mar"),
+            new Reserva(2, "Hotel Fazenda Paraíso", "2024-02-15", 750.00, "Inclui café da manhã"),
+            new Reserva(3, "Pousada dos Pássaros", "2024-03-10", 400.00, "Quarto familiar")
+        );
+
+        model.addAttribute("reservas", reservas);
+        return "minhas-reservas";
+    }
+}
+ -->

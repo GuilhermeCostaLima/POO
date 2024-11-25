@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagar</title>
-    <link rel="stylesheet" href="pagamento.css">
+    <link rel="stylesheet" th:href="@{/css/pagamento.css}">
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="index.html" style="text-decoration: none">
+            <a th:href="@{/}" style="text-decoration: none">
                 <h1 class="sitename">Neighborhood Hotels</h1>
             </a>
         </nav>
@@ -22,61 +22,61 @@
         <form class="plus">
             <div class="info">
                 <div class="hotel">
-                    <h2>Refúgio Morro da Tromba</h1>
+                    <h2 th:text="${hotel.nome}">Refúgio Morro da Tromba</h2>
                 </div>
                 <div class="desc">
-                    <h5>Rua Lauro Tobler, Joinville, CEP 89239-303, Brasil</h4>
+                    <h5 th:text="${hotel.endereco}">Rua Lauro Tobler, Joinville, CEP 89239-303, Brasil</h5>
                 </div>
                 <hr>
                 <div class="estadia">
-                    <h4>Por favor, selecionar horário de entrada e saída:</h3>
+                    <h4>Por favor, selecionar horário de entrada e saída:</h4>
                     <div class="entrada">
                         Entrada: 
-                        <input type="datetime-local" name="entrada" id="entrada">
+                        <input type="datetime-local" name="entrada" id="entrada" th:value="${reserva.entrada}">
                     </div>
                     <br>
                     <div class="saida">
                         Saída:  
-                        <input type="datetime-local" name="saida" id="saida">
+                        <input type="datetime-local" name="saida" id="saida" th:value="${reserva.saida}">
                     </div>
                 </div>
                 <br>
                 <hr>
                 <div class="preço">
-                    <h3>R$00,00</h3>
+                    <h3 th:text="'R$' + ${reserva.preco}">R$00,00</h3>
                 </div>
             </div>
-            
         </form>
-        <form action="">
+
+        <form th:action="@{/pagamento}" method="post">
             <div class="row">
                 <div class="column">
                     <h3 class="title">Endereço de cobrança</h3>
                     <div class="input-box">
                         <span>Nome completo:</span>
-                        <input type="text" placeholder="Guilherme da Costa de Lima">
+                        <input type="text" name="nome" placeholder="Guilherme da Costa de Lima" th:value="${usuario.nome}">
                     </div>
                     <div class="input-box">
                         <span>Email :</span>
-                        <input type="email" placeholder="example@example.com">
+                        <input type="email" name="email" placeholder="example@example.com" th:value="${usuario.email}">
                     </div>
                     <div class="input-box">
                         <span>Endereço :</span>
-                        <input type="text" placeholder="Rua - Numero">
+                        <input type="text" name="endereco" placeholder="Rua - Numero" th:value="${usuario.endereco}">
                     </div>
                     <div class="input-box">
                         <span>Cidade :</span>
-                        <input type="text" placeholder="Joinville">
+                        <input type="text" name="cidade" placeholder="Joinville" th:value="${usuario.cidade}">
                     </div>
 
                     <div class="flex">
                         <div class="input-box">
                             <span>Estado :</span>
-                            <input type="text" placeholder="Santa Catarina">
+                            <input type="text" name="estado" placeholder="Santa Catarina" th:value="${usuario.estado}">
                         </div>
                         <div class="input-box">
                             <span>CEP :</span>
-                            <input type="number" placeholder="123 456">
+                            <input type="number" name="cep" placeholder="123 456" th:value="${usuario.cep}">
                         </div>
                     </div>
                 </div>
@@ -85,39 +85,61 @@
                     <h3 class="title">Pagamento</h3>
                     <div class="input-box">
                         <span>Cartões aceitos :</span>
-                        <img src="cartões.png" alt="">
+                        <img th:src="@{/images/cartoes.png}" alt="Cartões aceitos">
                     </div>
                     <div class="input-box">
                         <span>Nome no cartão:</span>
-                        <input type="text" placeholder="Guilherme C Lima">
+                        <input type="text" name="nomeCartao" placeholder="Guilherme C Lima">
                     </div>
                     <div class="input-box">
                         <span>Número do cartão :</span>
-                        <input type="number" placeholder="1111 2222 3333 4444">
+                        <input type="number" name="numeroCartao" placeholder="1111 2222 3333 4444">
                     </div>
                     <div class="input-box">
                         <span>Mês de validade :</span>
-                        <input type="text" placeholder="agosto">
+                        <input type="text" name="mesValidade" placeholder="agosto">
                     </div>
                 
                     <div class="flex">
                         <div class="input-box">
                             <span>Ano de validade :</span>
-                            <input type="number" placeholder="2030">
+                            <input type="number" name="anoValidade" placeholder="2030">
                         </div>
                         <div class="input-box">
                             <span>CVC :</span>
-                            <input type="number" placeholder="123">
+                            <input type="number" name="cvc" placeholder="123">
                         </div>
                     </div>
                 </div>
             </div>
 
             <button type="submit" class="btn">Confirmar</button>
-            <button type="submit" class="btn2">Cancelar</button>
+            <button type="reset" class="btn2">Cancelar</button>
         </form>
     </div>
 
 </body>
 
 </html>
+
+
+<!-- se necessario -->
+
+<!-- @Controller
+@RequestMapping("/pagamento")
+public class PagamentoController {
+
+    @GetMapping
+    public String exibirPagamento(Model model) {
+        Hotel hotel = new Hotel("Refúgio Morro da Tromba", "Rua Lauro Tobler, Joinville, CEP 89239-303, Brasil");
+        Reserva reserva = new Reserva("2024-12-01T14:00", "2024-12-03T10:00", 200.00);
+        Usuario usuario = new Usuario("Guilherme da Costa de Lima", "example@example.com", "Rua X, 123", "Joinville", "Santa Catarina", "123456");
+
+        model.addAttribute("hotel", hotel);
+        model.addAttribute("reserva", reserva);
+        model.addAttribute("usuario", usuario);
+
+        return "pagamento";
+    }
+}
+-->
