@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/login.css">
+    <title>Login</title>
+</head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html" style="text-decoration: none">
+                    <h1 class="sitename">Neighborhood Hotels</h1>
+                </a>
+            </nav>
+        </header>
+
+        <div class="container-login">
+            <h1 style="color:#fff">Login</h1>
+
+            <form th:action="@{/login}" method="post">
+
+                <div class="entrar">
+                    <label for="username" style="color:#fff;">Nome de usuário:</label><br>
+                    <input type="text" id="username" name="username" required><br><br>
+
+                    <label for="password" style="color:#fff;">Senha:</label><br>
+                    <input type="password" id="password" name="password" required><br><br>
+
+                    <input type="submit" value="Entrar">
+                </div>
+
+                <div class="res">
+                    <p>Ainda não tem uma conta? <a href="/register">Registre-se aqui</a>.</p>
+                    <p>Voltar para a <a href="/">Página inicial</a>.</p>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
